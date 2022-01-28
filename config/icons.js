@@ -1,5 +1,8 @@
-// import Teste from '@/assets/icon/teste.svg?inline'
-
+import Quimica from '@/assets/icon/quimica.svg?inline'
+import Biologia from '@/assets/icon/biologia.svg?inline'
+import Matematica from '@/assets/icon/matematica.svg?inline'
 export default {
-  // 'teste': Teste
+  quimica: Quimica,
+  biologia: Biologia,
+  matematica: Matematica
 }

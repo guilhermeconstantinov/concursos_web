@@ -1,5 +1,5 @@
 <template>
-  <t-card>
+  <t-card variant="exercicio">
     <Enunciado />
     <div class="space-y-4">
       <Alternativa v-model="select" label="a" :content="data.alternatives.a" />
