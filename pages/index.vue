@@ -1,49 +1,36 @@
 <template>
   <div>
-    <Filtros />
-    <ListaExercicios :lista-questoes="questoes"/>
+    <LandingPageHeader />
+
+    <div class="flex justify-center space-x-10 bg-purple-500 py-5">
+      <div class="bg-white rounded p-4 w-72">
+        <h2 class="text-center text-2xl font-bold text-gray-700">Plano starter</h2>
+        <img src="~/assets/img/estudante1.jpg" class="rounded-md my-2"/>
+        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus nisl et lectus ullamcorper elementum nec at diam. Nam tincidunt.</p>
+        <t-button class="bg-blue-500 w-full mt-2 font-medium" text="VER MAIS"/>
+      </div>
+
+      <div class="bg-white rounded p-4 w-72">
+        <h2 class="text-center text-2xl font-bold text-gray-700">Plano Profissional</h2>
+        <img src="~/assets/img/estudante2.jpg" class="rounded-md my-2"/>
+        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus nisl et lectus ullamcorper elementum nec at diam. Nam tincidunt.</p>
+        <t-button class="bg-blue-500 w-full mt-2 font-medium" text="VER MAIS"/>
+      </div>
+
+      <div class="bg-white rounded p-4 w-72">
+        <h2 class="text-center text-2xl font-bold text-gray-700">Plano Ultra</h2>
+        <img src="~/assets/img/estudante3.jpg" class="rounded-md my-2"/>
+        <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce luctus nisl et lectus ullamcorper elementum nec at diam. Nam tincidunt.</p>
+        <t-button class="bg-blue-500 w-full mt-2 font-medium" text="VER MAIS"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import Filtros from '@/components/Exercicios/Filtros'
-import ListaExercicios from '@/components/Organisms/ListaExercicios'
-
+import LandingPageHeader from '@/components/Organisms/LandingPageHeader'
 export default {
-  components: { Filtros, ListaExercicios },
-   data() {
-    return {
-      questoes: []
-    }
-  },
-  fetch(){
-    this.questoes = [
-        {
-          body: '<p>Testando 1, 2 e 3</p>',
-          wording: 'asdasdasdasdasd',
-          alternatives: {
-            a: 'promover o encontro literário entre pessoas com deficiência visual.',
-            b: 'divulgar o empréstimo de livros para alunos com dificuldades de acessibilidade.',
-            c: 'reivindicar a digitalização do acervo das bibliotecas públicas para leitores cegos.',
-            d: 'oferecer a oportunidade de apoio a um projeto para leitores com necessidades especiais.',
-            e: 'estimular a arrecadação de livros apropriados para os estudantes com dificuldade de leitura.',
-          },
-          correct: 'd'
-        },
-        {
-          body: '<p>Testando 1, 2 e 3</p>',
-          wording: 'asdasdasdasdasd',
-          alternatives: {
-            a: 'promover o encontro literário entre pessoas com deficiência visual.',
-            b: 'divulgar o empréstimo de livros para alunos com dificuldades de acessibilidade.',
-            c: 'reivindicar a digitalização do acervo das bibliotecas públicas para leitores cegos.',
-            d: 'oferecer a oportunidade de apoio a um projeto para leitores com necessidades especiais.',
-            e: 'estimular a arrecadação de livros apropriados para os estudantes com dificuldade de leitura.',
-          },
-          correct: 'd'
-        },
-      ]
-  }
+  components: { LandingPageHeader },
+  layout: 'landing-page',
 }
-
 </script>
