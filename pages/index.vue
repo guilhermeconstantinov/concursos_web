@@ -31,6 +31,7 @@
 import LandingPageHeader from '@/components/Organisms/LandingPageHeader'
 export default {
   components: { LandingPageHeader },
+  auth: false,
   layout: 'landing-page',
 }
 </script>
