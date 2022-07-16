@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col">
+  <div class="min-h-screen">
     <Navbar />
 
-    <div class="flex-1">
+    <div class="min-height border border-red-500">
       <Nuxt />
     </div>
   </div>
@@ -17,8 +17,7 @@ export default {
 
 
 <style>
-html,
-body {
-  height: 100vh;
+.min-height {
+  min-height: 85vh;
 }
 </style>

@@ -4,7 +4,9 @@ export default {
 
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    middleware: ['auth']
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'concursos_web',
@@ -24,7 +26,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['@/plugins/vue-tailwind.js'],
+  plugins: ['@/plugins/vue-tailwind.js', '@/plugins/vue-toast.js', '@/plugins/vuelidate.js', '@/plugins/services.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -46,15 +48,38 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.NUXT_ENV_API_URL
+      ? process.env.NUXT_ENV_API_URL
+      : 'http://localhost:8000/',
+      prefix: '/api/'
+  },
 
   auth: {
     strategies: {
-      laravelSanctum: {
-        provider: 'laravel/sanctum',
-        url: '<laravel url>',
-      },
+      local: {
+        token: {
+          property: 'token',
+          required: true,
+          type: 'Bearer'
+        },
+        user: {
+          property: false,
+        },
+        url: process.env.NUXT_ENV_API_URL,
+        endpoints: {
+          login: { url: process.env.NUXT_ENV_API_URL + '/login', method: 'post' },
+          logout: { url: process.env.NUXT_ENV_API_URL + '/logout', method: 'get' },
+          user: { url: process.env.NUXT_ENV_API_URL + '/user', method: 'get' }
+        }
+      }
     },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

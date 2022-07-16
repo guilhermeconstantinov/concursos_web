@@ -7,7 +7,7 @@ export default {
       wrapper: '',
       label: 'block',
       body: '',
-      feedback: ' text-sm text-sm',
+      feedback: ' text-sm text-sm mt-0.5',
       description: 'text-gray-400 text-sm'
     },
     classes: {

@@ -80,7 +80,7 @@ export default {
     },
     variants: {
       danger: {
-        input: 'border-red-300 bg-red-50 placeholder-red-200 text-red-900',
+        input: 'border-red-300',
         clearButton: 'hover:bg-red-200 text-red-500'
       }
     }
